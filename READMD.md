@@ -1,0 +1,1 @@
+ansible-playbook -i inventory.ini --private-key master.pem playbook.yml -vvv
