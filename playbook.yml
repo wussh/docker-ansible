@@ -80,3 +80,15 @@
       loop:
         - docker.service
         - containerd.service
+
+    - name: Clone repository
+      git:
+        repo: "https://github.com/vegasbrianc/docker-compose-demo.git"
+        dest: "/home/ubuntu/docker-compose-demo"
+        version: "master"
+        force: yes
+
+    - name: Run Docker Compose
+      command: docker compose up -d
+      args:
+        chdir: "/home/ubuntu/docker-compose-demo"
